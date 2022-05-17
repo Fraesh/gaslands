@@ -1,0 +1,106 @@
+export const sponsors = {
+  None: { keywords: [], perkClasses: [], ruleset: "BASE" },
+  Rutherford: {
+    color: "orange.700",
+    keywords: [
+      "Military hardware",
+      "Well stocked",
+      "Might is right",
+      "Televised carnage",
+    ],
+    perkClasses: ["Badass", "Military"],
+    ruleset: "BASE",
+  },
+  Miyazaki: {
+    color: "blue.700",
+    keywords: ["Virtuoso", "Elegance", "Showing off"],
+    perkClasses: ["Daring", "Precision"],
+    ruleset: "BASE",
+  },
+  Mishkin: {
+    color: "green.800",
+    keywords: ["Thumpermonkey", "Dynamo", "All the toys"],
+    perkClasses: ["Military", "Technology"],
+    ruleset: "BASE",
+  },
+  Idris: {
+    color: "red.700",
+    keywords: ["N2O addict", "Speed demon", "Cult of speed", "Kiss my asphalt"],
+    perkClasses: ["Precision", "Speed"],
+    ruleset: "BASE",
+  },
+  Slime: {
+    color: "green.600",
+    keywords: ["Live fast", "Pinball", "Spiked Fist"],
+    perkClasses: ["Tuning", "Reckless"],
+    ruleset: "BASE",
+  },
+  "The Warden": {
+    color: "gray.900",
+    keywords: ["Prison cars", "Fireworks"],
+    perkClasses: ["Aggression", "Badass"],
+    ruleset: "BASE",
+  },
+  Scarlett: {
+    color: "red.600",
+    keywords: ["Crew Quarters", "Raiders", "Raise the Sails", "Press Gang"],
+    perkClasses: ["Aggression", "Tuning"],
+    ruleset: "BASE",
+  },
+  "Highway Patrol": {
+    color: "gray.600",
+    keywords: ["Hot Pursuit", "Bogey at 12 O'Clock", "Siren", "Steel Justice"],
+    perkClasses: ["Speed", "Pursuit"],
+    ruleset: "BASE",
+  },
+
+  Verney: {
+    color: "gray.700",
+    keywords: [
+      "MicroPlate Armour",
+      "Trunk of Junk",
+      "Tombstone",
+      "That's Entertainment",
+    ],
+    perkClasses: ["Technology", "Built"],
+    ruleset: "BASE",
+  },
+  Maxxine: {
+    color: "cyan.800",
+    keywords: ["Dizzy", "Maxximum Drift", "Meshuggah"],
+    perkClasses: ["Tuning", "Pursuit"],
+    ruleset: "BASE",
+  },
+  "The Order of the Inferno": {
+    color: "yellow.700",
+    keywords: ["Fire Walk With Me", "Burning Man", "Cult Of Flame"],
+    perkClasses: ["Horror", "Speed"],
+    ruleset: "BASE",
+  },
+  Beverly: {
+    color: "teal.700",
+    keywords: [
+      "Graveyard Shift",
+      "Ghost Rider",
+      "Soul Anchor",
+      "At The Crossroads",
+      "Inexorable",
+      "Soul Harvest",
+    ],
+    perkClasses: ["Horror", "Built"],
+    ruleset: "BASE",
+  },
+  "Rusty's Bootleggers": {
+    color: "orange.900",
+    keywords: [
+      "Party Hard",
+      "Dutch courage",
+      "As Straight As I'm Able",
+      "Over The Limit",
+      "Trailer Trash",
+      "Haulage",
+    ],
+    perkClasses: ["Reckless", "Built"],
+    ruleset: "BASE",
+  },
+};
