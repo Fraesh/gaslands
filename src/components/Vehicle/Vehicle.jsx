@@ -27,8 +27,8 @@ export const Vehicle = ({ vehicle, team, onChange, onDelete }) => {
 
   const invalid = isInvalid(vehicle.type, team);
   return (
-    <Box p={1} w="full">
-      <VStack width="full" p={1} borderRadius={4} border="1px solid #ffffff22">
+    <Box w="full">
+      <VStack width="full" p={2} borderRadius={4} border="1px solid #ffffff22">
         <HStack w="full" alignItems={"center"} gap={6}>
           <VStack flex="1" alignItems={"start"}>
             <HStack w="full">
@@ -125,12 +125,12 @@ const isInvalid = (vehicle, team) => {
     return "You can only have a single helicopter.";
   if (
     sponsors[team?.sponsor]?.keywords?.includes("Might is right") &&
-    vehicles[vehicle].weight === "Light"
+    vehicles[vehicle]?.weight === "Light"
   )
     return "Teams with 'Might is right' may not purchase lightweight vehicles.";
   if (
     sponsors[team?.sponsor]?.keywords?.includes("Might is right") &&
-    vehicles[vehicle].handling <= 2
+    vehicles[vehicle]?.handling <= 2
   )
     return "Teams with 'Elegance' may not purchase vehicles with handling <= 2.";
   if (

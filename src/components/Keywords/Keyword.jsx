@@ -21,7 +21,9 @@ export const Keyword = ({ keyword }) => {
   return (
     <Popover>
       <PopoverTrigger>
-        <Tag size="sm">{keyword}</Tag>
+        <Tag size="sm" cursor="pointer">
+          {keyword}
+        </Tag>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

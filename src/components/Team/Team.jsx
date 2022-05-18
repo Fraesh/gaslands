@@ -17,12 +17,18 @@ import { Keywords } from "../Keywords/Keywords";
 import { RowEnd } from "../RowEnd/RowEnd";
 import { Vehicle } from "../Vehicle/Vehicle";
 
-export const Team = ({ team, onChange, onDelete }) => {
+export const Team = ({ team, onChange }) => {
   const sponsor = sponsors[team.sponsor];
 
   return (
     <VStack alignItems={"start"}>
-      <HStack w="full" bg={sponsor?.color} p="2">
+      <HStack
+        w="full"
+        p="2"
+        bg={sponsor?.color}
+        borderRadius={4}
+        border="1px solid #ffffff22"
+      >
         <VStack w="full" alignItems={"start"}>
           <HStack w="full">
             <InputGroup size="xs">
@@ -30,7 +36,7 @@ export const Team = ({ team, onChange, onDelete }) => {
               <Input
                 variant="filled"
                 placeholder="Team Name"
-                value={team.name}
+                value={team.name || ""}
                 onChange={(e) => onChange({ ...team, name: e.target.value })}
               />
             </InputGroup>
@@ -38,7 +44,7 @@ export const Team = ({ team, onChange, onDelete }) => {
               size="xs"
               variant="filled"
               placeholder="Sponsor"
-              value={team.sponsor}
+              value={team.sponsor || ""}
               onChange={(e) => onChange({ ...team, sponsor: e.target.value })}
             >
               {Object.keys(sponsors).map((s) => (
@@ -52,7 +58,7 @@ export const Team = ({ team, onChange, onDelete }) => {
                 type="number"
                 variant="filled"
                 placeholder="xx"
-                value={team.maxCost}
+                value={team.maxCost || ""}
                 onChange={(e) =>
                   onChange({ ...team, maxCost: parseInt(e.target.value) })
                 }
@@ -71,7 +77,7 @@ export const Team = ({ team, onChange, onDelete }) => {
             <Keywords keywords={sponsor?.keywords} />
           </HStack>
         </VStack>
-        <RowEnd cans={getTeamCans(team)} onDelete={onDelete} type="Team" />
+        <RowEnd cans={getTeamCans(team)} type="Team" />
       </HStack>
 
       {team.vehicles.map((v, i) => (
