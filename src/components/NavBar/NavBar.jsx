@@ -15,9 +15,11 @@ import {
 } from "react-icons/md";
 import React from "react";
 import { LoadModal } from "../LoadModal/LoadModal";
+import { PrintModal } from "../PrintModal/PrintModal";
 
-export const NavBar = ({ print, save, load, newTeam, dirty }) => {
+export const NavBar = ({ save, load, newTeam, dirty, team }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const print = useDisclosure();
   return (
     <>
       <HStack w="full" p="4">
@@ -26,10 +28,10 @@ export const NavBar = ({ print, save, load, newTeam, dirty }) => {
         </Text>
         <HStack flex="1" justifyContent={"flex-end"}>
           <ButtonGroup size="sm">
-            <Button onClick={print} disabled leftIcon={<MdPrint />}>
+            <Button onClick={print.onOpen} leftIcon={<MdPrint />}>
               Print
             </Button>
-            <Button onClick={print} disabled leftIcon={<MdShare />}>
+            <Button disabled leftIcon={<MdShare />}>
               Share
             </Button>
             <Button onClick={save} disabled={!dirty} leftIcon={<MdSave />}>
@@ -45,6 +47,7 @@ export const NavBar = ({ print, save, load, newTeam, dirty }) => {
         </HStack>
       </HStack>
       <LoadModal onClose={onClose} isOpen={isOpen} load={load} />
+      <PrintModal onClose={print.onClose} isOpen={print.isOpen} team={team} />
     </>
   );
 };

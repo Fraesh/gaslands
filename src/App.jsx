@@ -99,9 +99,15 @@ function App() {
           onClose();
         }}
       />
-      <NavBar save={save} load={load} newTeam={newTeam} dirty={dirty} />
+      <NavBar
+        save={save}
+        load={load}
+        newTeam={newTeam}
+        dirty={dirty}
+        team={state}
+      />
       <Box display="flex" justifyContent={"center"} p="8" w="full">
-        <Box maxW="7xl" w="full">
+        <Box maxW="6xl" w="full">
           <Team
             team={state}
             onChange={(t) => {
