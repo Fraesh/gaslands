@@ -112,7 +112,7 @@ export const Team = ({ team, onChange }) => {
           onClick={() =>
             onChange({
               ...team,
-              vehicles: [...team.vehicles, {}],
+              vehicles: [...team.vehicles, { active: true }],
             })
           }
         >

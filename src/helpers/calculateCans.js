@@ -1,12 +1,13 @@
 import { perks } from "../db/perks";
-import { upgrades } from "../db/upgrades";
 import { vehicles } from "../db/vehicles";
-import { weapons } from "../db/weapons";
 import { getCost } from "./upgradeFunctions";
 import { getCost as getWeaponCost } from "./weaponFunctions";
 
 export const getTeamCans = (team) => {
-  return team.vehicles.reduce((cans, v) => cans + getVehicleCans(v, team), 0);
+  return team.vehicles.reduce(
+    (cans, v) => cans + (v.active ? getVehicleCans(v, team) : 0),
+    0
+  );
 };
 
 export const getVehicleCans = (vehicle, team) => {

@@ -38,7 +38,7 @@ export const LoadModal = ({ isOpen, onClose, load }) => {
         <ModalCloseButton />
         <ModalBody>
           <VStack gap="2">
-            {teams.map((t) => (
+            {teams?.map((t) => (
               <Team
                 team={t}
                 selected={t.name === selected}
@@ -51,9 +51,10 @@ export const LoadModal = ({ isOpen, onClose, load }) => {
         <ModalFooter>
           <Button
             colorScheme="blue"
+            disabled={!selected}
             mr={3}
             onClick={() => {
-              const t = teams.filter((t) => t.name === selected)?.[0];
+              const t = teams?.filter((t) => t.name === selected)?.[0];
               load(t);
               onClose();
             }}
@@ -100,7 +101,7 @@ const Team = ({ team, onClick, selected }) => {
         gridGap="1rem"
         w="full"
       >
-        {vehicles.map((v) => {
+        {vehicles?.map((v) => {
           const { weapons, upgrades, perks, type, name } = v;
 
           return (
@@ -147,10 +148,10 @@ const Team = ({ team, onClick, selected }) => {
                   Perks
                 </Text>
                 <Text fontSize="xs">
-                  {weapons.map((w) => w.type).join(", ")}
+                  {weapons?.map((w) => w?.type)?.join(", ")}
                 </Text>
-                <Text fontSize="xs"> {upgrades.join(", ")}</Text>
-                <Text fontSize="xs"> {perks.join(", ")}</Text>
+                <Text fontSize="xs"> {upgrades?.join(", ")}</Text>
+                <Text fontSize="xs"> {perks?.join(", ")}</Text>
               </Grid>
             </VStack>
           );

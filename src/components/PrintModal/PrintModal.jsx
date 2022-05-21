@@ -104,17 +104,21 @@ const Printable = React.forwardRef(({ team, state }, ref) => {
       >
         {state.card && (
           <Box display="flex" gap=".5cm">
-            {team.vehicles?.map((v) => {
-              const Component = cards[state.card];
-              return (
-                <Component vehicle={v} team={team} options={state.options} />
-              );
-            })}
+            {team.vehicles
+              ?.filter((v) => v.active)
+              .map((v) => {
+                const Component = cards[state.card];
+                return (
+                  <Component vehicle={v} team={team} options={state.options} />
+                );
+              })}
           </Box>
         )}
-        {team.vehicles?.map((v) => (
-          <VehicleTemplate vehicle={v} team={team} />
-        ))}
+        {team.vehicles
+          ?.filter((v) => v.active)
+          .map((v) => (
+            <VehicleTemplate vehicle={v} team={team} />
+          ))}
       </Box>
     </Box>
   );

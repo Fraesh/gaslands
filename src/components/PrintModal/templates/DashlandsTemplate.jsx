@@ -11,7 +11,7 @@ import {
 import { getSlots } from "../../../helpers/vehicleFunctions";
 import bg from "../../../img/dashlands_template.jpg";
 import bgbw from "../../../img/dashlands_template_bw.jpg";
-export const DashlandsTemplate = ({ vehicle, team, options }) => {
+export const DashlandsTemplate = ({ vehicle, team, options = {} }) => {
   const { name, type, weapons = [], upgrades = [], perks = [] } = vehicle;
   const { sponsor } = team;
   const wu = [
@@ -65,7 +65,7 @@ export const DashlandsTemplate = ({ vehicle, team, options }) => {
         fontSize="4mm"
         textAlign={"center"}
       >
-        {db.vehicles[vehicle.type].weight.substring(0, 1)}
+        {db.vehicles[vehicle.type]?.weight?.substring(0, 1)}
       </Text>
       <Text
         position="absolute"
